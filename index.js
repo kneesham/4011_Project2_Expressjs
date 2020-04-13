@@ -1,18 +1,9 @@
 const express = require("express");
+const v1Router = require("./routes/v1Routes");
 
 const app = express();
 
-
-app.use((req, res) => {
-    const method = req.method;
-    const route = req.url;
-    if(route ===  )
-
-
-
-    res.end("This worked: " + route + "  " + method  );
-
-});
+app.use(v1Router);
 
 
 const port = 3000;
