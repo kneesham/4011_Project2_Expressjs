@@ -1,0 +1,24 @@
+{
+  "name": "ted_nesham_project2",
+  "version": "1.0.0",
+  "description": "Date repo created: 04-12-2020 Repo owner: Ted Nesham",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kneesham/4011_Project2_Expressjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kneesham/4011_Project2_Expressjs/issues"
+  },
+  "homepage": "https://github.com/kneesham/4011_Project2_Expressjs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
