@@ -21,21 +21,27 @@ const getAllPosts = (req, res) => {
 const getUsersPosts = (req, res) => {
     // Returns all posts for a specific user, by using their username.
     const userName = req.params.userName;
-    let getUsersPosts = "https://jsonplaceholder.typicode.com/posts?userId=";
+    let getAllUsersPosts = "https://jsonplaceholder.typicode.com/posts?userId=";
     const linkToUsers = "https://jsonplaceholder.typicode.com/users";
+
+    console.log(getAllUsersPosts);
 
     axios.get(linkToUsers).then((response) => {
         // get the json from typicode.com
+        console.log(response.data);
         const BreakException = {};
         try {
             response.data.forEach(user => {
 
-                if (user.name === userName) {
-                    getUsersPosts += user.id;
+                if (user.username === userName) {
+                    getAllUsersPosts += user.id;
                     // add the userid so that we can identify each post for a given user.
+                    console.log(user.id);
 
-                    axios.get(getUsersPosts).then((response) => {
+                    axios.get(getAllUsersPosts).then((response) => {
                         // get the json from typicode.com
+                        console.log(getAllUsersPosts);
+
                         console.log(response.data);
                         res.send(response.data); 
                     });

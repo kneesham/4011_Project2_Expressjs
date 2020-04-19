@@ -49,10 +49,10 @@ const editPost = async (req, res) => {
 
 const deletePost = async (req, res) => {
     // removes a particular post
-    const postId = req.params.postId;
+    const postId = parseInt(req.params.postId);
     try {
         mongoose.connect(mongoUrl, {useNewUrlParser: true, useUnifiedTopology: true} );
-        const results = await UserPost.deleteOne({ _id: postId }).exec();
+        const results = await UserPost.deleteOne({ id: postId }).exec();
         res.send(results);
         mongoose.disconnect(mongoUrl);
     }
